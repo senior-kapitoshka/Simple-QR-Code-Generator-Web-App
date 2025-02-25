@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "cstdint": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "*.tcc": "c",
+        "memory": "c",
+        "istream": "c",
+        "functional": "c",
+        "tuple": "c",
+        "utility": "c"
+    }
+}

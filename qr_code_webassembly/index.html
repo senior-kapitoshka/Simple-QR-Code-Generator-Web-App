@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>QR Code Generator</title>
+    <script src="instWA.js" ></script>
+    <script src="htmlHandler.js" ></script>
+</head>
+<body>
+    
+    <div class="row" >
+        <div id="inputField">
+            
+            <h1 >QR Code Generator</h1>
+
+            
+            <span id="pBox"></span>
+            <br>
+            <form action="#" autocomplete="off">
+                <input autcomplete="false" id="input" type="text" size="30" placeholder="enter a word of no more than 7 chars"/>
+            
+                <input id="buttonGen" class="button gray" type="submit"
+                value="Generate" onclick="generateQR()">
+                <p id="ret"></p>
+            </form>
+        </div>
+        <br>
+            <div id="result" >
+            <br>
+            <br>
+                <p>
+                    <div id="qrDiv"> </div>
+                </p>
+                <p>
+                    <input id="tryAgain" class="button gray" type="submit"
+                         value="Try Again" onclick="tryAgain()">
+                    <br>
+                </p>
+            <div id="forSVG">
+                <p>
+                    <a href="javascript: downloadSVG();">
+                        download SVG
+                    </a>
+                </p>
+            </div>
+            <br>
+                <a href="javascript: copyTxt()">
+                    copy QR ASCII to clipboard
+                </a>
+        </div>
+    
+    </div>
+
+    <script src="button.js" ></script>
+</body>
+</html>
