@@ -31,7 +31,6 @@ void qrBuilder(const char* input,size_t n,char* ascii, char* print,char* svg){
     setErrorCorrection(qr_code,strlen(qr_code));
     int** mx= fillMx(qr_code,strlen(qr_code),);
 
-    //free(qr_code);
     
     getQRCode(mx,ascii,print,svg);
 }
