@@ -27,6 +27,8 @@ void setData(char* qr_code,const char* input,size_t n){
         //char_to_bin(input[i],qr_code);
     }
     #if 0
+    //qr_code может быть переполнен, 
+    // множественные strcat, не проверяя границы буфера.
     size_t sz=strlen(qr_code);
     if(sz<69){
         strcat(qr_code,"0000");

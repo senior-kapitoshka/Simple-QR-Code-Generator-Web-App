@@ -20,6 +20,7 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
     char* svgWhite =" <rect fill=\"white\" stroke=\"black\"  width=\"10\" height=\"10\" rx=\"3\"  x=\"X\" y=\"Y\" /> ";
     char* svgBegin=" <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 210 210\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"> ";
     char* svgEnd=" </svg> ";
+
     size_t z=0;
     for(int i=0;i<SVG_BEGIN;++i,++z){
         svg[z]=svgBegin[i];
@@ -27,6 +28,9 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
 
     char* toPrint=malloc(QRCODE_SIZE);
     char* ASCII=malloc(QRCODE_SIZE);
+    ASCII[0] = '\0';
+    toPrint[0] = '\0';
+
 
     for(int i=0;i<TWENTY_ONE;++i){
         for(int j=0;j<TWENTY_ONE;++j){
@@ -79,15 +83,14 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
         strcat(ASCII,"\n");
         strcat(toPrint,"\n");
     }
-    strcat(ASCII,"\0");
-    strcat(toPrint,"\0");
+
     for(int i=0;i<SVG_END;++i,++z){
         svg[z]=svgEnd[i];
     }
     #if 0 
     strcat(ascii,ASCII);
     strcat(print,toPrint);
-    #endif 0
+    #endif 
 
     *ascii = strdup(ASCII);   // копируем в выходной буфер
     *print = strdup(toPrint);
@@ -95,3 +98,4 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
     free(ASCII);   // освобождаем временные
     free(toPrint);
 }
+
