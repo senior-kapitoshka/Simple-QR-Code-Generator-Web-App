@@ -24,8 +24,10 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
     for(int i=0;i<SVG_BEGIN;++i,++z){
         svg[z]=svgBegin[i];
     }
+
     char* toPrint=malloc(QRCODE_SIZE);
     char* ASCII=malloc(QRCODE_SIZE);
+
     for(int i=0;i<TWENTY_ONE;++i){
         for(int j=0;j<TWENTY_ONE;++j){
             if(mxTemplate[i][j]==1){
@@ -82,6 +84,14 @@ void getQRCode(int mxTemplate[TWENTY_ONE][TWENTY_ONE],char* ascii, char* print,c
     for(int i=0;i<SVG_END;++i,++z){
         svg[z]=svgEnd[i];
     }
+    #if 0 
     strcat(ascii,ASCII);
     strcat(print,toPrint);
+    #endif 0
+
+    *ascii = strdup(ASCII);   // копируем в выходной буфер
+    *print = strdup(toPrint);
+
+    free(ASCII);   // освобождаем временные
+    free(toPrint);
 }
