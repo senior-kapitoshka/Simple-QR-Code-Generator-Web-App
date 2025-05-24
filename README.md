@@ -13,3 +13,7 @@ QR код посредством скрипта, написанного на я�
 
 ![code](https://github.com/senior-kapitoshka/Simple-QR-Code-Generator-Web-App/blob/main/qr2.jpg)
 
+## Демо
+
+Тестировать можно [здесь](https://senior-kapitoshka.github.io/Simple-QR-Code-Generator-Web-App/).
+
